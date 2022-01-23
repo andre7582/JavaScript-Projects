@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Calculator</title>
+</head>
+<body>
+    <h1 id="non-printable">Square Value Calculator | Square Root Calculator</h1>
+    <div class="mmt" id="non-printable">
+    <div class="mmt_calc clearfix">
+    <label>Enter Number to find Square &amp; Square Root for</label>
+    <div class="mmt_calc_frm">
+    <div><input id="mya" type="text" placeholder="Number"> </div>
+    </div>
+    <label>&nbsp;</label>
+    <center>
+    <input type="button" class="btn" value="Calculate" id="button" onclick="findSquareroot(0)">
+    <input type="button" class="btn" value="Clear" onclick="Clear1()">
+    </center>
+    <label>&nbsp;</label>
+    <div id="show" style="display: block;">
+    <p><b>Result:</b></p>
+    <p>Square Value = <b><span id="res2">625</span></b></p>
+    <p>Square Root = <b><span id="res1">5</span></b></p>
+    </div>
+       
+    <script>
+    function Clear1()
+    {
+    document.getElementById("mya").value = "";
+    document.getElementById("show").style.display = "none";
+    document.getElementById("res1").innerHTML= "";
+    document.getElementById("res2").innerHTML= "";
+    }
+    function findSquareroot(i1){
+    document.getElementById("res1").innerHTML= "";
+    document.getElementById("res2").innerHTML= "";
+    if ( i1 == "0")
+    {
+    var a=parseFloat(document.getElementById("mya").value);
+    }
+    else
+    {
+    document.getElementById("mya").value = i1;
+    a = i1;
+    }
+    document.getElementById("show").style.display = "block";
+    var val=0;
+    if(a<0){
+    a=a*-1;
+    val=Math.round(Math.sqrt(a)*10000)/10000+' i';
+    }else{
+    val=Math.round(Math.sqrt(a)*10000)/10000;
+    }
+    document.getElementById("res1").innerHTML= val;
+    document.getElementById("res2").innerHTML= Math.pow(a,2);
+    }
+    function a_pow_b(form) {
+    a=eval(form.a.value)
+    b=eval(form.b.value)
+    c=Math.pow(a, b)
+    form.ans.value = c
+    }
+    </script>
+
+    
+</body>
+</html>

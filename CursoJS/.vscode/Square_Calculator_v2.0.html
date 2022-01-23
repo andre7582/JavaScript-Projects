@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Calculator</title>
+    <style>
+        body {
+            background: rgb(209, 182, 245);
+            font: normal 15pt Arial;
+        }
+        header {
+            background-color: rgb(194, 164, 224);
+            color: rgb(58, 37, 85);
+            font: 12pt Arial;
+            text-align: center;
+            border-radius: 4px;
+            width: auto;
+            height: auto;
+        }
+        section {
+            font: 15pt Arial;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: auto;
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534);
+        }
+        footer {
+            color: black;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="non-printable">Calculadora de Raiz Quadrada e Quadrado do Número (n²)</h1>
+    </header>
+    <section>
+        <center>
+        <div class="mmt" id="non-printable">
+            <!--<div class="mmt_calc clearfix">-->
+            <label>Digite um número para calcular seu quadrado e sua raiz quadrada:</label>
+            <!--<div class="mmt_calc_frm">-->
+        </div>
+        <label>&nbsp;</label>
+        <div>
+            <input id="mya" type="text" placeholder="Digite um número aqui"> 
+        </div>
+        <label>&nbsp;</label>  
+        <div>  
+        <!--<center>-->
+        <input type="button" class="btn" value="Calcular" id="button" onclick="findSquareroot(0)">
+        <input type="button" class="btn" value="Limpar" onclick="Clear1()">
+        
+        </div>
+        </center>
+        
+        <!--<label>&nbsp;</label>-->
+        
+        <div id="show" style="display: block;">
+            <p><b>Resultado:</b></p>
+            <p>Número ao quadrado (n²) = <b><span id="res2"></span></b></p>
+            <p>Raiz quadrada do número = <b><span id="res1"></span></b></p>
+        </div>
+    </section>
+    <footer>
+        <p>@adj2022</p>
+    </footer>
+    <script>
+        function Clear1() {
+            document.getElementById("mya").value = "";
+            document.getElementById("show").style.display = "none";
+            document.getElementById("res1").innerHTML= "";
+            document.getElementById("res2").innerHTML= "";
+        }
+        function findSquareroot(i1) {
+            document.getElementById("res1").innerHTML= "";
+            document.getElementById("res2").innerHTML= "";
+            if ( i1 == "0") {
+            var a=parseFloat(document.getElementById("mya").value);
+            } else {
+                document.getElementById("mya").value = i1;
+                a = i1;
+            }
+            document.getElementById("show").style.display = "block";
+            var val=0;
+            if(a<0){
+            a=a*-1;
+            val=Math.round(Math.sqrt(a)*10000)/10000+' i';
+            } else {
+                val=Math.round(Math.sqrt(a)*10000)/10000;
+            }
+            document.getElementById("res1").innerHTML= val;
+            document.getElementById("res2").innerHTML= Math.pow(a,2);
+        }
+        function a_pow_b(form) {
+            a=eval(form.a.value)
+            b=eval(form.b.value)
+            c=Math.pow(a, b)
+            form.ans.value = c
+        }
+    </script>
+
+    
+</body>
+</html>

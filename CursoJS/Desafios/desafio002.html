@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>===== Desafio 002 =====</h1>
+    <label>Em que dia você nasceu?</label>
+    <input id="dia" type="number"><br><br>
+    <label>Em qual mês você nasceu?</label>
+    <input id="mes" type="text"><br><br>
+    <label>Em qual ano você nasceu?</label>
+    <input id="ano" type="number"><br><br>
+    <input type="button" value="Finalizar" onclick="finalizar()"><br><br>
+    <div id="resp"></div>
+    <script>
+        function finalizar() {
+            var dia = document.getElementById('dia')
+            var mes = document.getElementById('mes')
+            var ano = document.getElementById('ano')
+            d = (dia.value)
+            m = (mes.value)
+            a = (ano.value)
+            resp.innerHTML = `Você nasceu no dia ${d} de ${m} de ${a}.`
+        }
+    </script>
+
+</body>
+</html>
